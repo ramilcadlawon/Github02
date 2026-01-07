@@ -1,0 +1,14 @@
+
+
+
+Import-CSV -Path "C:\RMC\PASAR Working Files\GLENCORE Migration\AD Work Files\CSV Files\User.csv" | ForEach-Object {Get-ADUser -Filter "SamAccountname -like '*$($_.SamAccountname)*'"  -Properties SamAccountname,Name,EmailAddress | select EmailAddress,Name,SamAccountName}
+
+
+User.csv format:
+
+SamAccountName
+rcadlawon
+rcadlawon-sa
+...
+...
+...
